@@ -1,19 +1,16 @@
 # Additional apps
 PRODUCT_PACKAGES += \
-    MonthCalendarWidget \
     OpenDelta \
     OmniSwitch \
     Chromium \
-    OmniJaws \
     OmniStyle \
+    OmniJaws \
     QuickSearchBox \
-    OmniClockOSS \
     MusicFX \
     audio_effects.conf \
     libcyanogen-dsp \
     Phonograph \
     Turbo \
-    MatLog \
     OmniChange \
     OmniBrain
 
@@ -96,9 +93,6 @@ PRODUCT_PACKAGES += \
     textclassifier.smartselection.tr.model \
     textclassifier.smartselection.zh.model \
     textclassifier.smartselection.zh-Hant.model
-
-PRODUCT_PACKAGES += \
-    Launcher3Dark
 
 # for fun
 PRODUCT_PACKAGES += \
