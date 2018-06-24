@@ -69,7 +69,12 @@ PRODUCT_PACKAGES += \
     AccentSmokingGreen \
     AccentDeadRed \
     AccentRottenOrange \
-    AccentDeepPurple
+    AccentDeepPurple \
+    AccentCustom1 \
+    AccentCustom2 \
+    AccentCustom3 \
+    AccentCustom4 \
+    AccentCustom5
 
 PRODUCT_PACKAGES += \
     PrimaryAlmostBlack \
