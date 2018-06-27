@@ -1,6 +1,5 @@
 # Additional apps
 PRODUCT_PACKAGES += \
-    OpenDelta \
     OmniSwitch \
     Chromium \
     OmniStyle \
@@ -9,9 +8,7 @@ PRODUCT_PACKAGES += \
     MusicFX \
     audio_effects.conf \
     libcyanogen-dsp \
-    Phonograph \
     Turbo \
-    OmniChange \
     OmniBrain
 
 # Additional tools
