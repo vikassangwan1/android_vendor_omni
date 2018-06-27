@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     libcyanogen-dsp \
     Turbo \
+    NovaLauncher \
     OmniBrain
 
 # Additional tools

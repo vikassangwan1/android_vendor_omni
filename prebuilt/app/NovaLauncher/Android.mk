@@ -1,0 +1,10 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := NovaLauncher
+LOCAL_SRC_FILES := NovaLauncher.apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_PATH  := $(TARGET_OUT_APPS_PRIVILEGED)
+include $(BUILD_PREBUILT)

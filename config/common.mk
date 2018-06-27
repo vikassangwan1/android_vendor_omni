@@ -81,6 +81,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Additional packages
 -include vendor/omni/config/packages.mk
 
+# Additions
+# Dex pre-opt
+WITH_DEXPREOPT := true
+
+# Speed apps
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+  Settings \
+  SystemUI
+
+# Disable debugging no matter which build type
+SDCLANG_COMMON_FLAGS += -g0 -DNDEBUG
+
+# Don't build debug for host or device
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+# END
+
 #GApps
 -include vendor/gapps/config.mk
 
