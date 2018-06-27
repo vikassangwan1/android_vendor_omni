@@ -1,6 +1,7 @@
 # Additional apps
 PRODUCT_PACKAGES += \
     OmniSwitch \
+    DeskClock \
     Chromium \
     OmniStyle \
     OmniJaws \
