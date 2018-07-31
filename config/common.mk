@@ -98,7 +98,7 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # END
 
 #GApps
--include vendor/gapps/config.mk
+-include vendor/omni/config/gapps.mk
 
 # Pixelstyle
 -include vendor/pixelstyle/config.mk
