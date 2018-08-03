@@ -35,12 +35,26 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES  += ro.adb.secure=1
 endif
 
+# Enforce privapp-permissions whitelist
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.control_privapp_permissions=enforce
+
+PRODUCT_COPY_FILES += \
+    vendor/omni/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
+
 # Backup Tool
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/omni/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/omni/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/omni/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh \
+    vendor/omni/prebuilt/addon.d/69-gapps.sh:system/addon.d/69-gapps.sh
+else
 PRODUCT_COPY_FILES += \
     vendor/omni/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/omni/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/omni/prebuilt/bin/blacklist:system/addon.d/blacklist \
-    vendor/omni/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
+    vendor/omni/prebuilt/bin/blacklist:system/addon.d/blacklist
+endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
@@ -56,7 +70,8 @@ PRODUCT_COPY_FILES += \
 
 #permissions
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/etc/permissions/privapp-permissions-omni.xml:system/etc/permissions/privapp-permissions-omni.xml
+    vendor/omni/prebuilt/etc/permissions/privapp-permissions-omni.xml:system/etc/permissions/privapp-permissions-omni.xml \
+    vendor/omni/prebuilt/etc/permissions/privapp-permissions-elgoog.xml:system/etc/permissions/privapp-permissions-elgoog.xml
 
 PRODUCT_COPY_FILES += \
     vendor/omni/prebuilt/sounds/omni_ringtone1.ogg:system/media/audio/ringtones/omni_ringtone1.ogg \
@@ -107,4 +122,4 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 -include vendor/omni/config/version.mk
 
 # Add our overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/common
